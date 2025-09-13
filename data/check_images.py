@@ -24,7 +24,9 @@
 ##
 
 # Imports python modules
-from time import time, sleep
+import time
+from time import sleep
+time = time()
 
 # Imports print functions that check the lab
 from print_functions_for_lab_checks import *
@@ -118,11 +120,12 @@ def main():
     
     # TODO 0: Measure total program runtime by collecting end time
     end_time = time.perf_counter()
-    print(f"\n** Total Elapsed Runtime: {end_time - start_time:.2f} seconds **")
+    
 
     
     # TODO 0: Computes overall runtime in seconds & prints it in hh:mm:ss format
     tot_time = end_time - start_time
+    print("\nTotal Elapsed Runtime:", tot_time, "seconds")
     print("\n** Total Elapsed Runtime:",
       str(int((tot_time/3600))) + ":" +
       str(int((tot_time % 3600)/60)) + ":" +
