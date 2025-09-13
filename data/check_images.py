@@ -26,7 +26,7 @@
 # Imports python modules
 import time
 from time import sleep
-time = time()
+
 
 # Imports print functions that check the lab
 from print_functions_for_lab_checks import *
