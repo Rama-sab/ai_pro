@@ -1,0 +1,23 @@
+Final Results — City Dog Show Image Classification
+
+Dataset
+- Total images: 40
+- Dog images: 30
+- Not-a-dog images: 10
+
+Accuracy Summary (full pet_images set)
+CNN Model    | % Not-a-Dog Correct | % Dogs Correct | % Breeds Correct | % Match Labels
+-------------|----------------------|----------------|------------------|---------------
+ResNet       | 90.0%               | 100.0%         | 90.0%            | 82.5%
+AlexNet      | 100.0%              | 100.0%         | 80.0%            | 75.0%
+VGG          | 100.0%              | 100.0%         | 93.3%            | 87.5%
+
+Conclusion
+- Best overall model: VGG
+- Rationale: It achieves 100% for both “dog/not-a-dog” identification (Objective 1) and the highest breed accuracy (93.3%) for dog images (Objective 2). 
+- Trade-off: VGG typically runs slower than ResNet/AlexNet, but its accuracy gains—especially on breed classification—make it the best choice for this task.
+
+Objectives Addressed
+1) Identify dogs vs not-dogs: VGG and AlexNet reached 100% on both classes; ResNet was slightly lower on “not-a-dog” at 90%.
+2) Identify dog breeds: VGG achieved the highest breed accuracy (93.3%), followed by ResNet (90.0%), then AlexNet (80.0%).
+

@@ -1,0 +1,80 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = vgg 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 5 key-value pairs.
+Below are 5 of them:
+ 1 key:                 Basenji_01.jpg  label:                    basenji
+ 2 key:                 Basenji_02.jpg  label:                    basenji
+ 3 key:                     Cat_01.jpg  label:                        cat
+ 4 key:                     Dog_02.jpg  label:                        dog
+ 5 key:                   Gecko_01.jpg  label:                      gecko
+
+     MATCH:
+
+                Basenji_01.jpg: 
+Real:                    basenji   Classifier:                        basenji
+
+                Basenji_02.jpg: 
+Real:                    basenji   Classifier:                        basenji
+
+                  Gecko_01.jpg: 
+Real:                      gecko   Classifier:            banded gecko, gecko
+
+ NOT A MATCH:
+
+                    Cat_01.jpg: 
+Real:                        cat   Classifier:                           lynx
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:                        basenji
+
+# Total Images 5 # Matches: 3 # NOT Matches: 2
+
+     MATCH:
+
+                Basenji_01.jpg: 
+Real:                    basenji   Classifier:                        basenji  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                Basenji_02.jpg: 
+Real:                    basenji   Classifier:                        basenji  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                  Gecko_01.jpg: 
+Real:                      gecko   Classifier:            banded gecko, gecko  
+PetLabelDog: 0  ClassLabelDog: 0
+
+ NOT A MATCH:
+
+                    Cat_01.jpg: 
+Real:                        cat   Classifier:                           lynx  
+PetLabelDog: 0  ClassLabelDog: 0
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:                        basenji  
+PetLabelDog: 1  ClassLabelDog: 1
+
+# Total Images 5 # Matches: 3 # NOT Matches: 2
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  5  N Dog Images:  3  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:  66.7
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  5  N Dog Images:  3  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:  66.7
+
+
+*** Results Summary for CNN Model Architecture: VGG ***
+Number of Images: 5
+Number of Dog Images: 3
+Number of 'Not-a-Dog' Images: 2
+
+% Correct Breed: 66.7
+% Correct Dogs: 100.0
+% Correct 'Not-a-Dog': 100.0
+% Match: 60.0
+
+** Total Elapsed Runtime: 0:0:3

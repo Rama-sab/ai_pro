@@ -1,0 +1,80 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = resnet 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 5 key-value pairs.
+Below are 5 of them:
+ 1 key:                 Basenji_01.jpg  label:                    basenji
+ 2 key:                 Basenji_02.jpg  label:                    basenji
+ 3 key:                     Cat_01.jpg  label:                        cat
+ 4 key:                     Dog_02.jpg  label:                        dog
+ 5 key:                   Gecko_01.jpg  label:                      gecko
+
+     MATCH:
+
+                Basenji_01.jpg: 
+Real:                    basenji   Classifier:                        basenji
+
+                Basenji_02.jpg: 
+Real:                    basenji   Classifier:                        basenji
+
+ NOT A MATCH:
+
+                    Cat_01.jpg: 
+Real:                        cat   Classifier:   norwegian elkhound, elkhound
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:                        basenji
+
+                  Gecko_01.jpg: 
+Real:                      gecko   Classifier: african chameleon, chamaeleo chamaeleon
+
+# Total Images 5 # Matches: 2 # NOT Matches: 3
+
+     MATCH:
+
+                Basenji_01.jpg: 
+Real:                    basenji   Classifier:                        basenji  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                Basenji_02.jpg: 
+Real:                    basenji   Classifier:                        basenji  
+PetLabelDog: 1  ClassLabelDog: 1
+
+ NOT A MATCH:
+
+                    Cat_01.jpg: 
+Real:                        cat   Classifier:   norwegian elkhound, elkhound  
+PetLabelDog: 0  ClassLabelDog: 1
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:                        basenji  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                  Gecko_01.jpg: 
+Real:                      gecko   Classifier: african chameleon, chamaeleo chamaeleon  
+PetLabelDog: 0  ClassLabelDog: 0
+
+# Total Images 5 # Matches: 2 # NOT Matches: 3
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  5  N Dog Images:  3  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog:  50.0  Pct Corr Breed:  66.7
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  5  N Dog Images:  3  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog:  50.0  Pct Corr Breed:  66.7
+
+
+*** Results Summary for CNN Model Architecture: RESNET ***
+Number of Images: 5
+Number of Dog Images: 3
+Number of 'Not-a-Dog' Images: 2
+
+% Correct Breed: 66.7
+% Correct Dogs: 100.0
+% Correct 'Not-a-Dog': 50.0
+% Match: 40.0
+
+** Total Elapsed Runtime: 0:0:2

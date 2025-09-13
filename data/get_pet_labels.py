@@ -3,8 +3,8 @@
 # */AIPND-revision/intropyproject-classify-pet-images/get_pet_labels.py
 #                                                                             
 # PROGRAMMER: 
-# DATE CREATED:                                  
-# REVISED DATE: 
+# DATE CREATED: 2025-09-09
+# REVISED DATE:2025-09-13
 # PURPOSE: Create the function get_pet_labels that creates the pet labels from 
 #          the image's filename. This function inputs: 
 #           - The Image Folder as image_dir within get_pet_labels function and 
@@ -42,4 +42,40 @@ def get_pet_labels(image_dir):
     """
     # Replace None with the results_dic dictionary that you created with this
     # function
-    return None
+    
+    # Create results dictionary
+    results_dic = dict()
+
+    # Get filenames from the provided image_dir
+    try:
+        filename_list = listdir(image_dir)
+    except FileNotFoundError:
+        # If a relative path was given that doesn't exist from current working dir,
+        # try to gracefully hint by raising with a clearer message.
+        raise FileNotFoundError(f"Image directory not found: {image_dir}")
+
+    # Loop through filenames, skip hidden/system files
+    for filename in filename_list:
+        if filename.startswith('.'):
+            continue  # skip hidden files like .DS_Store
+
+        # Create a label from filename:
+        #  - lowercase
+        #  - split by '_'
+        #  - keep only alphabetical tokens
+        #  - join by single space and strip
+        lower_name = filename.lower()
+        tokens = lower_name.split('_')
+        words = [t for t in tokens if t.isalpha()]
+        pet_label = ' '.join(words).strip()
+
+        # Add to dictionary as list [label]
+        if filename not in results_dic:
+            results_dic[filename] = [pet_label]
+        else:
+            # Warn but do not overwrite
+            # (Following the project guidance to avoid duplicates)
+            # You can print or log; here we keep it quiet to avoid noisy output.
+            pass
+
+    return results_dic
